@@ -1,0 +1,142 @@
+/* CSS Variables */
+
+:root {
+    /* Colors */
+    --dark-cyan: hsl(158, 36%, 37%);
+    --cream: hsl(30, 38%, 92%);
+    --very-dark-blue: hsl(212, 21%, 14%);
+    --dark-grayish-blue: hsl(228, 12%, 48%);
+    --white: hsl(0, 0%, 100%);
+    /* Fonts */
+    --ff-h1: 'Fraunces', serif;
+    --ff-p: 'Montserrat', sans-serif;
+    --fs-p: 14px;
+    --fw-1: 500;
+    --fw-2: 700;
+}
+
+/* General Styling */
+
+html {
+    box-sizing: border-box;
+}
+
+* {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    font-family: var(--ff-p);
+    font-size: var(--fs-p);
+    font-weight: var(--fw-1);
+    color: var(--dark-grayish-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: var(--cream);
+}
+
+/* Card Styling */
+
+.card {
+    display: flex;
+    background-color: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    width: clamp(300px, 90vw, 750px);
+}
+
+.card__desktop-img {
+    width: 50%;
+    display: block;
+}
+
+.card__mobile-img {
+    display: none;
+    width: 100%;
+}
+
+.card__flex {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 2em 2.5em;
+}
+
+.card__perfume {
+    letter-spacing: 10px;
+    margin-bottom: 0;
+}
+
+.card__title {
+    font-family: var(--ff-h1);
+    font-size: 2.5rem;
+    color: var(--very-dark-blue);
+}
+
+.card__description {
+    margin: 0;
+}
+
+.card__price-container {
+    display: flex;
+    align-items: center;
+}
+
+.card__current-price {
+    color: var(--dark-cyan);
+    font-family: var(--ff-h1);
+    font-size: 2.5rem;
+    margin-right: 15px;
+}
+
+.card__old-price {
+    text-decoration: line-through;
+}
+
+.card__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .6em 0;
+    width: 100%;
+    color: var(--white);
+    background-color: var(--dark-cyan);
+    text-decoration: none;
+    font-weight: var(--fw-2);
+    border-radius: 10px;
+    transition: all 50ms;
+}
+
+.card__link:hover {
+    background-color: var(--very-dark-blue);
+}
+
+.card__cart-icon {
+    margin-right: 12px;
+}
+
+/* Media Queries */
+
+@media (max-width: 850px) {
+    .card {
+        flex-direction: column;
+        margin: 70px 0;
+    }
+
+    .card__desktop-img {
+        display: none;
+    }
+
+    .card__mobile-img {
+        display: block;
+    }
+
+    .card__flex {
+        width: 100%;
+    }
+}
